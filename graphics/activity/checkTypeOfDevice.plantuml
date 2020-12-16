@@ -1,0 +1,22 @@
+@startuml 
+
+(*) -->  "Get data about device"
+
+if "Phone?" then
+    -->[true] "Width = window.innerWidth"
+    --> "Return (width <= MAX_PHONE_WIDTH)"
+    --> (*)
+    -->[false] if "Tablet?" then
+        -->[true] "Width = window.innerWidth"
+        --> "Return (width > MAX_PHONE_WIDTH && width <= MAX_TABLET_WIDTH)"
+        --> (*)
+        -->[false] if "Desctop?" then
+                -->[true] "Width = window.innerWidth"
+                --> "Return (width > MAX_TABLET_WIDTH)"
+                --> (*)
+                -->[false] if "Mobile?" then
+                        -->[true] "Width = window.innerWidth"
+                        --> "Return (isTablet() || isPhone())"
+                        --> (*)
+
+@enduml

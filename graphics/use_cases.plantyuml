@@ -1,0 +1,50 @@
+@startuml
+left to right direction
+
+package Users {
+    actor User
+    User as "User"
+
+}
+
+package APP {
+  usecase "Products" as UC1
+  usecase "About us" as UC2
+  usecase "Delivery" as UC3
+  usecase "Contact" as UC4
+  usecase "Cart" as UC5
+  usecase "Add to cart" as UC6
+  usecase "Checkout" as UC7
+}
+
+package Services {
+  usecase "Render" as UC8
+}
+
+package Database {
+  usecase "DB get/set" as UC9
+}
+
+User --> UC1
+User --> UC2
+User --> UC3
+User --> UC4
+User --> UC5
+User --> UC6
+User --> UC7
+
+UC1 <-- UC9
+UC7 <-- UC9
+
+UC2 <-- UC8
+UC3 <-- UC8
+UC4 <-- UC8
+UC5 <-- UC8
+UC6 <-- UC8
+
+
+
+
+
+
+@enduml

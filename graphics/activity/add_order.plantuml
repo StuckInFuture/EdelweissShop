@@ -1,0 +1,8 @@
+@startuml 
+
+(*) -->  "Checkout"
+--> "Get information in database"
+--> "Add information about order to database"
+--> (*)
+
+@enduml

@@ -1,0 +1,19 @@
+@startuml Component&Deployment
+
+left to right direction
+
+node "Client"{
+  [React] -> [clientJS]: use
+
+  [Redux + Sagas] -> [React]: use
+}
+
+
+node "Server"{
+  [Express] -> [serverJS]: use
+}
+
+[React] <-> [Express]
+
+@enduml
+ 

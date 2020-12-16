@@ -1,0 +1,35 @@
+@startuml
+
+actor User
+
+
+User -> UI: open app
+UI --> User: app will be open
+
+User -> UI: add to cart
+UI --> User: cart has been changed
+
+
+
+
+
+
+User -> UI: checkout
+UI -> Database: add checkout
+Database --> UI: change information
+UI --> User: checkout has been changed
+
+
+
+
+
+
+
+User -> UI: pay for order
+UI -> BL: check credentials and pay
+BL --> UI: all is ok
+UI -> Database: add new order
+Database --> UI: order has beel added
+UI --> User: your order number is ...
+
+@enduml

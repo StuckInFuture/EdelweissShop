@@ -1,0 +1,19 @@
+@startuml
+
+
+note right: Configure Store (BL - Bisnes logic)
+(*)--> "Create object for control BL" 
+
+--> "Read state from cache"
+
+--> "Start global state of store"
+
+--> "Start BL"
+
+--> "Subscribe for changes of state, if change - write to memory"
+
+
+-->(*)
+
+
+@enduml

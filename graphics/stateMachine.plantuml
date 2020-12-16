@@ -1,0 +1,21 @@
+@startuml
+scale 600 width
+
+[*] --> BL : Pay
+BL: # Credentials
+BL -right-> Payment : Request payment
+BL --> Cancelled : Cancel pay
+
+Payment --> Added_order : Succeeded 
+Payment --> Request_for_checking_credentials : Failded 
+
+state Payment {
+  [*] --> Check_credentials
+}
+
+Added_order --> [*]
+Cancelled --> [*]
+Request_for_checking_credentials --> [*]
+
+
+@enduml
